@@ -6,7 +6,7 @@ public final class main extends JavaPlugin {
 	
 		public void onEnable()
 		{
-			getLogger().info("BukkitBoard BUILD 1 active");
+			getLogger().info("BukkitBoard Loaded");
 		}
 		public void onDisable()
 		{
