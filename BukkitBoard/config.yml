@@ -1,0 +1,6 @@
+#Config file for BukkitBoard (Pre-Alpha)
+
+hostname: localhost
+database: bb
+user: bbtest
+password: 12345
