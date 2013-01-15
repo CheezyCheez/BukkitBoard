@@ -1,3 +1,8 @@
 name: BukkitBoard
 main: org.speewave.BukkitBoard.main
 version: 1.0
+
+commands:
+   bb:
+    description: BukkitBoard Commands
+    usage: /bb post [type] [message]
