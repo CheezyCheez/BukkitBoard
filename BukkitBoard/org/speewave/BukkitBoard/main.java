@@ -135,7 +135,9 @@ public final class main extends JavaPlugin
 			if( player == "speewave")
 			{
 				Bukkit.broadcastMessage(ChatColor.RED + "The developer of BukkitBoard has joined!");
-			}else if(player == "football70500"){
+			}
+			else if(player == "football70500")
+			{
 				Bukkit.broadcastMessage(ChatColor.RED + "A developer of BukkitBoard has joined!");
 			}
 			// Shameless plug is ... rather interesting : Thanks @football70500
@@ -152,7 +154,6 @@ public final class main extends JavaPlugin
 				//info (i)
 				case ("i"): return 'i'; 
 				case ("info"): return 'i'; 
-				case ("411"): return 'i'; 
 				//Stores (s)
 				case ("s"): return 's';
 				case ("store"): return 's'; 
