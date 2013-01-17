@@ -16,10 +16,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
+//Please Note this is not a final product just yet.. (i'll probably always be doing something to it) anyway... if you have a Feature request or Bug:
+//Please go to : https://github.com/speewave/BukkitBoard/issues... someone on the dev team will do something about it...
 
 public final class main extends JavaPlugin
 {
+	
+	
 	//PETER, Not sure what you mean by this: //TODO: Add a config for messages 
 	//TODO: Add the ability to connect to view posts on a website.
 	
@@ -35,9 +38,8 @@ public final class main extends JavaPlugin
 	
 	//TODO: Add more commands!
 	//TODO: Add a help menu.
-	//TODO: Allow the admins to make extra categories.
-	//TODO: Add a credit command.
-	//TODO: Add ability to make the plugin hook into iConomy(Will depend on Vault). Shouldn't be hard.
+	
+	//PETER: What do you mean? like adding iConomy support? or something else? //TODO: Add a credit command.
 	//TODO: Get some more devs?
 	
 		//public MySQL db;
