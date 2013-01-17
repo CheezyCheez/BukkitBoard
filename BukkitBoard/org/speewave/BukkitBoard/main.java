@@ -20,16 +20,26 @@ import java.sql.Statement;
 
 public final class main extends JavaPlugin
 {
-	//TODO: Add a config for messages
+	//PETER, Not sure what you mean by this: //TODO: Add a config for messages 
 	//TODO: Add the ability to connect to view posts on a website.
-	//TODO: Get a server hosting company to provide us with MYSQL so admins don't have to get one.
-	//If we get a MYSQL database for this, we can get rid of the config file for the SQL completely, can't we?
+	
+	/*
+	 * =========================================================================================================================
+	 * //TODO: Get a server hosting company to provide us with MYSQL so admins don't have to get one.
+	 * //If we get a MYSQL database for this, we can get rid of the config file for the SQL completely, can't we?
+	 * =========================================================================================================================
+	 * PETER, I Seriously think you were high when you wrote this: You need the config file, you tell it where your database is 
+	 * - and BukkitBoard connects to it and does its thing... unless your trying to make a cross-server internet type thing where other
+	 * - people post use one server to post... and even then that causes a lot of problems to maintain... so ... yeah
+	*/
+	
 	//TODO: Add more commands!
 	//TODO: Add a help menu.
 	//TODO: Allow the admins to make extra categories.
 	//TODO: Add a credit command.
 	//TODO: Add ability to make the plugin hook into iConomy(Will depend on Vault). Shouldn't be hard.
 	//TODO: Get some more devs?
+	
 		//public MySQL db;
 		public Connection db;
 		public PreparedStatement ps;
@@ -148,8 +158,7 @@ public final class main extends JavaPlugin
 		{
 			switch(instring.toLowerCase())
 			{
-				//TODO: News for staff only
-				//TODO: Compos for staff only
+				//TODO: 
 			
 				//info (i)
 				case ("i"): return 'i'; 
