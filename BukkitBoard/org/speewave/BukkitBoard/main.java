@@ -187,27 +187,33 @@ public final class main extends JavaPlugin
 		
 		}
 
-		public void Post (Player player, String inType, String[] Message)
+		public boolean Post (Player player, String inType, String[] Message)
 		{
-			//Workaround:  
-			//TODO: Figure out the right way to do this so only arg3+ shows up
-			//TODO: Figure out how to avoid apostrophes causing errors
+			boolean success= true;
+			
 			int startindex = Message[0].length() + Message [1].length() + 1;
 			String msg = Joiner.on(" ").join(Message).substring(startindex).trim();
 			
 			char t = TypeAlias(inType);
-		
+			if (t=='0')
+			{
+				player.sendMessage("You didn't use a recognized type, use /bb types for a listing of them");
+				player.sendMessage("Except not now because that feature isn't implemented yet");
+				return false;
+			}
+			
 			try
 			{
-	
 				ps.execute("INSERT INTO bktbrd_main (player,type,msg) VALUES('"+player.getName()+"','"+t+"','"+msg+"');");
 			}
 			catch (SQLException e)
 			{
 				player.sendMessage("Something Went Wrong... Have an admin look it to it.. your error will be on the console");
 				getLogger().severe(e.getMessage());
-				
+				success=false;
 			}
+			
+			return success;
 		}
 		 public boolean onCommand(CommandSender sender, Command command, String c, String[] args)
 		 {
@@ -231,8 +237,7 @@ public final class main extends JavaPlugin
 	           {
 	        	   switch (args[0])
 	        	   {
-	        	   case "post":
-	        		   Post(send,args[1],args); 
+	        	   case "post": return Post(send,args[1],args); 
 	        		   default:
 	           			 break;		  
 	        	   }
