@@ -38,16 +38,18 @@ public final class main extends JavaPlugin
 			boolean isGood = true;
 			//Lets Load up The Config File:
 			getLogger().info("Starting Up BukkitBoard");
-			getLogger().info("Connecting to MySQL Database");
-			
-			
-			//ISSUE (Or potential one at that): Get a better way to detect and work with the config... 
-			//write a config.yml file <Not sure if this automatically checks for one when saving...
 			getConfig().options().copyDefaults(true);
 			saveConfig();
 			
-			//Set up the DB
-			
+			getLogger().info("Connecting to MySQL Database");
+			SQLConnect();
+			TableCheck();
+		}
+		
+		//
+		public boolean SQLConnect()
+		{
+			//Set up the DB	
 			//Build a Connection String: (jdbc:mysql://<hostname>/<database>?user=<user>+&password=<password>
 			String cs = "jdbc:mysql://"+
 						getConfig().get("hostname")+"/"+
@@ -64,12 +66,14 @@ public final class main extends JavaPlugin
 			{
 				getLogger().severe("Couldn't Connect to MySQL Database.. Check your Config Files and Server and try again");
 				getLogger().severe(e.getMessage());
-				isGood = false;
+				return false;
 			}
-			//looks like we're good!
-			//Step 2!
-			if (isGood)
-			{
+			return true;
+		}
+		
+		//Initialization code : Checks for the main table... Creates it if there isn't one
+		public boolean TableCheck()
+		{
 				getLogger().info("Connected to MySQL Database");
 				//Now that it's set up Check to see if there is at least a bukkitboard table exists (bktbrd_main)
 				getLogger().info("Checking for BukkitBoard Main Table (bktbrd_main)");
@@ -85,43 +89,30 @@ public final class main extends JavaPlugin
 					//1146 = Table doesn't exist
 					if (s == 1146)
 					{
-						getLogger().info("Main Table not existant... Creating");
-						getLogger().info("Generating Main Table : bktbrd_main");
-						
-						//Lets Create a Table!
-						//more exception Catching...
+						getLogger().info("Main Table not found, Creating it");
 						try
 						{
 							ps= db.prepareStatement("CREATE TABLE bktbrd_main (ID smallint NOT NULL AUTO_INCREMENT,player varchar(16),type char,msg varchar(120),PRIMARY KEY (id));");
 							ps.execute();
-							isGood=true;
 						}
 						catch(SQLException e2)
 						{
 							getLogger().severe("Could Not Create Table! Please check database permissions and try again..");
 							getLogger().severe(e2.getMessage());
-							isGood=false;
+							return false;
 						}
-					
+						getLogger().info("Table Created!");
+						return true;
 					}
 					else
 					{
-						//TODO: This Doesn't Show up
-						getLogger().info("Table Found!");
-						isGood=true;
+						getLogger().info("Table Found");
+						return true;
 					}
 				}
-					if (isGood)
-					{
-						getLogger().info("BukkitBoard Ready!"); 
-					}
-					else
-					{
-						getLogger().severe("BukkitBoard had Errors");
-					}
-				}
+				return true;
 		}
-	
+		
 		//NOT WORKING : 
 		public void join(PlayerJoinEvent event)
 		{
