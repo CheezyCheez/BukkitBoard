@@ -21,10 +21,11 @@ import java.sql.Statement;
 
 public final class main extends JavaPlugin
 {
-	//TODO: Add more commands!
-	//TODO: Add a help menu.
+		//TODO: Add more commands!
+		//TODO: Add a help menu.
+		//TODO: Load types externally instead of having them hard-coded
 	
-		//public MySQL db;
+		public String tbd = "Sorry... This Function not yet implemented";
 		public Connection db;
 		public PreparedStatement ps;
 
@@ -121,6 +122,7 @@ public final class main extends JavaPlugin
 				}
 		}
 	
+		//NOT WORKING : 
 		public void join(PlayerJoinEvent event)
 		{
 			event.getPlayer().sendMessage(ChatColor.BLUE + "This server is running BukkitBoard!");
@@ -136,6 +138,7 @@ public final class main extends JavaPlugin
 			}
 			// Shameless plug is ... rather interesting : Thanks @football70500
 		}
+		
 		//Aliases for types
 		public char TypeAlias (String instring)
 
@@ -168,7 +171,31 @@ public final class main extends JavaPlugin
 			}
 		
 		}
-
+		
+		//BukkitBoard Functionality
+		
+		//Listing Information on the database
+		public boolean list (Player player, String[] args)
+		{
+			player.sendMessage(tbd);
+			return true;
+		}
+		
+		//Help Command
+		public boolean help(Player player, String [] args)
+		{
+			player.sendMessage(tbd);
+			return true;
+		}
+		
+		//Listing Types command
+		public boolean ShowTypes(Player player)
+		{
+			player.sendMessage(tbd);
+			return true;
+		}
+		
+		//Posting command /bb post
 		public boolean Post (Player player, String inType, String[] Message)
 		{
 			boolean success= true;
@@ -201,7 +228,9 @@ public final class main extends JavaPlugin
 			}
 			return success;
 		}
-		 public boolean onCommand(CommandSender sender, Command command, String c, String[] args)
+		
+		
+		public boolean onCommand(CommandSender sender, Command command, String c, String[] args)
 		 {
 	            Player send = (Player) sender;
 	            Player target = null;
