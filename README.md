@@ -19,5 +19,7 @@ As of the latest Commit... you'll need:
 
 ##Commands
 ===========
-... Well We're not there yet!
+Added commands
+- /bb help
+- /bb post
 

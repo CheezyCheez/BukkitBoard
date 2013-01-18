@@ -5,3 +5,4 @@ public class MessageType
 	public String Name;
 	public char SQLType;
 }
+//Dafuq is this for?
