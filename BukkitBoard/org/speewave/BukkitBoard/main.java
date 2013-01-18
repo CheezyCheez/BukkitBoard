@@ -184,7 +184,20 @@ public final class main extends JavaPlugin
 		//Help Command
 		public boolean help(Player player, String [] args)
 		{
-			player.sendMessage(tbd);
+			switch (args[1])
+			{
+			default: return Help_Usage(player);
+			}
+		}
+		
+		public boolean Help_Usage(Player player)
+		{
+			player.sendMessage(ChatColor.AQUA+"BukkitBoard Usage List");
+			player.sendMessage(ChatColor.AQUA+"Use /bb help <subcommand> to find more help on a topic");
+			player.sendMessage(ChatColor.RED+"===========================================================");
+			player.sendMessage("/bb post <type> <msg>");
+			player.sendMessage("/bb list -t<type> -a<amount> -p<page>");
+			player.sendMessage("/bb remove <id>");
 			return true;
 		}
 		
@@ -235,26 +248,13 @@ public final class main extends JavaPlugin
 	            Player send = (Player) sender;
 	            Player target = null;
 	            
-	            //TODO: Write something to handle all these command
-	            //TODO: Add Some Commands:
-	            //Command List:
-	            // /bb <command>
-	            // [DONE] : post <type> <msg> - Post a Message, needs the Type + Message
-	            // list <page>- List Messages
-	            // read <id> <msg> - Respond to a message (sends to personal mailboxes)
-	            // remove <id> - removes a post
-	            // help
-	            //TODO: Add Staff Commands:
-	            //Command List: 
-	            // /bba (bukkitboard for admins)
-	            // remove <id> <reason> - Removes a post, Give a reason (Message will be removed and player will be notified)
-	           if (command.getName().equalsIgnoreCase("bb"))
-	           {
-	        	   switch (args[0])
-	        	   {
-	        	   case "post": return Post(send,args[1],args);
-	        		   default:
-	           			 break;		  
+	            if (command.getName().equalsIgnoreCase("bb"))
+	            {
+	            	switch (args[0])
+	            	{
+	            		case "post": return Post(send,args[1],args);
+	            		case "help" : return help(send,args);
+	            		default: Help_Usage(send);	  
 	        	   }
 	           }
 	            
