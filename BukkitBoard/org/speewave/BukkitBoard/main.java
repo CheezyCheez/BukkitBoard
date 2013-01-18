@@ -1,3 +1,19 @@
+/*
+ * 						BukkitBoard
+ * 		The Bullitin Board Plugin for Bukkit Servers!
+ * ==========================================================
+ * 	    Copyright (C) 2013 The BukkitBoard Development Team
+ * 
+ * 		This Code is Licensed under the FreeBSD License
+ *			 Please read the LICENCE.txt file!
+ * 		For a list of Authors & Contributors see AUTHORS.TXT
+ * 
+ * 		For More info. Check out our Project on GitHub!
+ * 			https://github.com/speewave/BukkitBoard
+ * 
+ * 			Also Please check out the README.md
+ */
+
 package org.speewave.BukkitBoard;
 
 import org.bukkit.Bukkit;
