@@ -28,7 +28,8 @@ public final class main extends JavaPlugin
 		public String tbd = "Sorry... This Function not yet implemented";
 		public Connection db;
 		public PreparedStatement ps;
-
+		public MessageType[] mt;
+		
 		public void onEnable()
 		{	
 			//Checks everywhere;
@@ -44,6 +45,25 @@ public final class main extends JavaPlugin
 			getLogger().info("Connecting to MySQL Database");
 			SQLConnect();
 			TableCheck();
+			FillMTArray();
+			
+		}
+		
+		//Fill the Message Type Array
+		public boolean FillMTArray()
+		{
+			int max = getConfig().getConfigurationSection("Type").getKeys(false).size();
+			mt = new MessageType[max];
+			for(int i=0; i < max; i++)
+			for(String mKey:getConfig().getConfigurationSection("Type").getKeys(false))
+			{
+				//DEBUG MODE
+				mt[i].Name = getConfig().getString("Types."+mKey+".name");
+				mt[i].SQLType = getConfig().getString("Types."+mKey+".sid").toCharArray()[0];
+				getLogger().info(mt[i].Name+mt[i].SQLType);
+			}
+			
+			return true;
 		}
 		
 		//
