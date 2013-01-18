@@ -21,26 +21,8 @@ import java.sql.Statement;
 
 public final class main extends JavaPlugin
 {
-	
-	
-	//PETER, Not sure what you mean by this: //TODO: Add a config for messages 
-	//TODO: Add the ability to connect to view posts on a website.
-	
-	/*
-	 * =========================================================================================================================
-	 * //TODO: Get a server hosting company to provide us with MYSQL so admins don't have to get one.
-	 * //If we get a MYSQL database for this, we can get rid of the config file for the SQL completely, can't we?
-	 * =========================================================================================================================
-	 * PETER, I Seriously think you were high when you wrote this: You need the config file, you tell it where your database is 
-	 * - and BukkitBoard connects to it and does its thing... unless your trying to make a cross-server internet type thing where other
-	 * - people post use one server to post... and even then that causes a lot of problems to maintain... so ... yeah
-	*/
-	
 	//TODO: Add more commands!
 	//TODO: Add a help menu.
-	
-	//PETER: What do you mean? like adding iConomy support? or something else? //TODO: Add a credit command.
-	//TODO: Get some more devs?
 	
 		//public MySQL db;
 		public Connection db;
@@ -160,7 +142,7 @@ public final class main extends JavaPlugin
 		{
 			switch(instring.toLowerCase())
 			{
-				//TODO: 
+				//TODO: add config customizable types
 			
 				//info (i)
 				case ("i"): return 'i'; 
@@ -192,7 +174,7 @@ public final class main extends JavaPlugin
 			boolean success= true;
 			
 			int startindex = Message[0].length() + Message [1].length() + 1;
-			String msg = Joiner.on(" ").join(Message).substring(startindex).trim();
+			String msg = Joiner.on(" ").join(Message).substring(startindex).trim();//TODO: Add this to fix apostrophes causing errors...replaceAll("'", "")
 			
 			char t = TypeAlias(inType);
 			if (t=='0')
@@ -212,7 +194,11 @@ public final class main extends JavaPlugin
 				getLogger().severe(e.getMessage());
 				success=false;
 			}
-			
+			if (success = true)
+			{
+				//TODO: Print a status out
+				//TODO: Charge the player money (for Vault Support)
+			}
 			return success;
 		}
 		 public boolean onCommand(CommandSender sender, Command command, String c, String[] args)
@@ -237,7 +223,7 @@ public final class main extends JavaPlugin
 	           {
 	        	   switch (args[0])
 	        	   {
-	        	   case "post": return Post(send,args[1],args); 
+	        	   case "post": return Post(send,args[1],args);
 	        		   default:
 	           			 break;		  
 	        	   }
