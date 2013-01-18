@@ -1,7 +1,7 @@
 package org.speewave.BukkitBoard;
 
-public final class MessageType
+public class MessageType 
 {
-		String Name;
-		char SQLType;
+	public String Name;
+	public char SQLType;
 }

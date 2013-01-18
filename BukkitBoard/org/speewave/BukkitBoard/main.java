@@ -44,7 +44,7 @@ public final class main extends JavaPlugin
 		public String tbd = "Sorry... This Function not yet implemented";
 		public Connection db;
 		public PreparedStatement ps;
-		public MessageType[] mt;
+		//public MessageType[] mt;
 		
 		public void onEnable()
 		{	
@@ -61,11 +61,12 @@ public final class main extends JavaPlugin
 			getLogger().info("Connecting to MySQL Database");
 			SQLConnect();
 			TableCheck();
-			FillMTArray();
+			//FillMTArray();
 			
 		}
 		
-		//Fill the Message Type Array
+		//Fill the Message Type Array. NOT WORKING
+		/*
 		public boolean FillMTArray()
 		{
 			int max = getConfig().getConfigurationSection("Type").getKeys(false).size();
@@ -81,6 +82,7 @@ public final class main extends JavaPlugin
 			
 			return true;
 		}
+		*/
 		
 		//
 		public boolean SQLConnect()
