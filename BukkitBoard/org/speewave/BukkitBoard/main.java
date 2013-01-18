@@ -159,11 +159,16 @@ public final class main extends JavaPlugin
 			String player = event.getPlayer().getDisplayName();
 			if( player == "speewave")
 			{
-				Bukkit.broadcastMessage(ChatColor.RED + "The developer of BukkitBoard has joined!");
+           	 for(Player allPlayers : getServer().getOnlinePlayers()) {
+ 				allPlayers.sendMessage(ChatColor.RED + "A developer of BukkitBoard has joined!");
+           	 }
+
 			}
 			else if(player == "football70500")
 			{
-				Bukkit.broadcastMessage(ChatColor.RED + "A developer of BukkitBoard has joined!");
+				for(Player allPlayers : getServer().getOnlinePlayers()) {
+	 				allPlayers.sendMessage(ChatColor.RED + "A developer of BukkitBoard has joined!");
+				}
 			}
 			// Shameless plug is ... rather interesting : Thanks @football70500
 		}
