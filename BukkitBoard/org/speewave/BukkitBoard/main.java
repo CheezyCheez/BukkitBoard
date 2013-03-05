@@ -230,9 +230,9 @@ public final class main extends JavaPlugin
 			player.sendMessage(ChatColor.AQUA+"BukkitBoard Usage List");
 			player.sendMessage(ChatColor.AQUA+"Use /bb help <subcommand> to find more help on a topic");
 			player.sendMessage(ChatColor.RED+"===========================================================");
-			player.sendMessage("/bb post <type> <msg>");
-			player.sendMessage("/bb list -t<type> -a<amount> -p<page>");
-			player.sendMessage("/bb remove <id>");
+			player.sendMessage(ChatColor.BLUE + "/bb post <type> <msg>");
+			player.sendMessage(ChatColor.BLUE + "/bb list -t<type> -a<amount> -p<page>");
+			player.sendMessage(ChatColor.BLUE + "/bb remove <id>");
 			return true;
 		}
 		
