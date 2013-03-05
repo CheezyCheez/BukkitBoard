@@ -247,7 +247,6 @@ public final class main extends JavaPlugin
 		//Posting command /bb post
 		public boolean Post (Player player, String inType, String[] Message)
 		{
-			Player send = (Player) sender;
 			boolean success= true;
 			
 			int startindex = Message[0].length() + Message [1].length() + 1;
