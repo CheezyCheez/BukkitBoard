@@ -152,7 +152,7 @@ public final class main extends JavaPlugin
 		}
 		
 		//NOT WORKING : 
-		public void join(PlayerJoinEvent event)
+	/*	public void join(PlayerJoinEvent event)
 		{
 			event.getPlayer().sendMessage(ChatColor.BLUE + "This server is running BukkitBoard!");
 			//TODO: Add an option to toggle messages on and off.
@@ -172,6 +172,7 @@ public final class main extends JavaPlugin
 			}
 			// Shameless plug is ... rather interesting : Thanks @football70500
 		}
+		*/
 		
 		//Aliases for types
 		public char TypeAlias (String instring)
