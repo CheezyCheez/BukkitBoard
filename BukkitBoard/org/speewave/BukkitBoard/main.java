@@ -246,6 +246,7 @@ public final class main extends JavaPlugin
 		//Posting command /bb post
 		public boolean Post (Player player, String inType, String[] Message)
 		{
+			Player send = (Player) sender;
 			boolean success= true;
 			
 			int startindex = Message[0].length() + Message [1].length() + 1;
@@ -271,7 +272,7 @@ public final class main extends JavaPlugin
 			}
 			if (success = true)
 			{
-				//TODO: Print a status out
+				Bukkit.broadcastMessage("Someone has made another post! Type /bb list to view it!")
 				//TODO: Charge the player money (for Vault Support)
 			}
 			return success;
