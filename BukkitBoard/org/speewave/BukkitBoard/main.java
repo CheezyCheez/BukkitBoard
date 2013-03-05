@@ -37,6 +37,7 @@ import java.sql.Statement;
 
 public final class main extends JavaPlugin
 {
+	        //TODO: Write all the messages to a log file?
 		//TODO: Add more commands!
 		//TODO: Add a help menu.
 		//TODO: Load types externally instead of having them hard-coded
