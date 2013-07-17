@@ -14,6 +14,22 @@
  * 			Also Please check out the README.md
  */
 
+/*
+ * 						BukkitBoard
+ * 		The Bullitin Board Plugin for Bukkit Servers!
+ * ==========================================================
+ * 	    Copyright (C) 2013 The BukkitBoard Development Team
+ * 
+ * 		This Code is Licensed under the FreeBSD License
+ *			 Please read the LICENCE.txt file!
+ * 		For a list of Authors & Contributors see AUTHORS.TXT
+ * 
+ * 		For More info. Check out our Project on GitHub!
+ * 			https://github.com/speewave/BukkitBoard
+ * 
+ * 			Also Please check out the README.md
+ */
+
 package org.speewave.BukkitBoard;
 
 import org.bukkit.Bukkit;
@@ -228,12 +244,13 @@ public final class main extends JavaPlugin
 		
 		public boolean Help_Usage(Player player)
 		{
-			player.sendMessage(ChatColor.AQUA+"BukkitBoard Usage List");
-			player.sendMessage(ChatColor.AQUA+"Use /bb help <subcommand> to find more help on a topic");
 			player.sendMessage(ChatColor.RED+"===========================================================");
+			player.sendMessage(ChatColor.BLUE+"BukkitBoard Usage List");
+			player.sendMessage(ChatColor.BLUE+"Use /bb help <subcommand> to find more help on a topic");
 			player.sendMessage(ChatColor.BLUE + "/bb post <type> <msg>");
 			player.sendMessage(ChatColor.BLUE + "/bb list -t<type> -a<amount> -p<page>");
 			player.sendMessage(ChatColor.BLUE + "/bb remove <id>");
+			player.sendMessage(ChatColor.RED+"===========================================================");
 			return true;
 		}
 		
@@ -272,7 +289,7 @@ public final class main extends JavaPlugin
 			}
 			if (success = true)
 			{
-				Bukkit.broadcastMessage("Someone has made another post! Type /bb list to view it!")
+				Bukkit.broadcastMessage("Someone has made another post! Type /bb list to view it!");
 				//TODO: Charge the player money (for Vault Support)
 			}
 			return success;
@@ -302,3 +319,4 @@ public final class main extends JavaPlugin
 			getLogger().info("BukkitBoard Unloaded");
 		}
 }
+
