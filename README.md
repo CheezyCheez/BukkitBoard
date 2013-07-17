@@ -1,21 +1,20 @@
-BukkitBoard
+BukkitBoard [UNSTABLE]
 ===========
 
-A console-based Bulletin Board Plugin for Bukkit Minecraft Servers, Not yet ready for stable release
+A console-based Bulletin Board Plugin for Bukkit Minecraft Servers
 
-##Notes
+
+##Letter From the Developer 
 =======
-* This is my first Java project \ Bukkit Plugin \ Git Repo... so expect things to be messy, and unlike the norm
-* I come from a C#\C++ background... so my brackets may end up on another line <gasp>. feel free to bring it up to code if it is a concern
-* This Project can be fully imported using EGit + Eclipse.. however, it saves the project showing that the Bukkit API is on my desktop, you'll need to fix that before compiling... 
-* ^ I may just put only source up so for the sanity of others... maybe in a future commit when i git (heh puns) the hang of things
+Currently this build is unstable and is nowhere near where we'd like it to be. Don't worry, once i get a stable version working(Shortly), i'll be making a more efficient unstable branch... (Still was getting used to Source Control and git at the start of the project)
+
+-Speewave
 
 ##Dependencies
 ===========
 As of the latest Commit... you'll need:
 
 * Latest CraftBukkit Development API
-
 
 ##Commands
 ===========
