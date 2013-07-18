@@ -1,22 +1,6 @@
 /*
  * 						BukkitBoard
- * 		The Bullitin Board Plugin for Bukkit Servers!
- * ==========================================================
- * 	    Copyright (C) 2013 The BukkitBoard Development Team
- * 
- * 		This Code is Licensed under the FreeBSD License
- *			 Please read the LICENCE.txt file!
- * 		For a list of Authors & Contributors see AUTHORS.TXT
- * 
- * 		For More info. Check out our Project on GitHub!
- * 			https://github.com/speewave/BukkitBoard
- * 
- * 			Also Please check out the README.md
- */
-
-/*
- * 						BukkitBoard
- * 		The Bullitin Board Plugin for Bukkit Servers!
+ * 		The Bulletin Board Plugin for Bukkit Servers!
  * ==========================================================
  * 	    Copyright (C) 2013 The BukkitBoard Development Team
  * 
@@ -244,13 +228,14 @@ public final class main extends JavaPlugin
 		
 		public boolean Help_Usage(Player player)
 		{
-			player.sendMessage(ChatColor.RED+"===========================================================");
-			player.sendMessage(ChatColor.BLUE+"BukkitBoard Usage List");
-			player.sendMessage(ChatColor.BLUE+"Use /bb help <subcommand> to find more help on a topic");
+			player.sendMessage(ChatColor.RED  + "===========================================================");
+			player.sendMessage(ChatColor.BLUE + "BukkitBoard Usage List");
+			player.sendMessage(ChatColor.BLUE + " Use /bb help <subcommand> to find more help on a topic");
+			player.sendMessage(ChatColor.RED  + "===========================================================");
 			player.sendMessage(ChatColor.BLUE + "/bb post <type> <msg>");
 			player.sendMessage(ChatColor.BLUE + "/bb list -t<type> -a<amount> -p<page>");
 			player.sendMessage(ChatColor.BLUE + "/bb remove <id>");
-			player.sendMessage(ChatColor.RED+"===========================================================");
+			player.sendMessage(ChatColor.RED  + "===========================================================");
 			return true;
 		}
 		
