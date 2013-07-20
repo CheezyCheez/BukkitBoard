@@ -37,11 +37,7 @@ import java.sql.Statement;
 
 public final class main extends JavaPlugin
 {
-	        //TODO: Write all the messages to a log file?
-		//TODO: Add more commands!
-		//TODO: Add a help menu.
-		//TODO: Load types externally instead of having them hard-coded
-	
+		
 		public String tbd = "Sorry... This Function not yet implemented";
 		public Connection db;
 		public PreparedStatement ps;
@@ -49,43 +45,17 @@ public final class main extends JavaPlugin
 		
 		public void onEnable()
 		{	
-			//Checks everywhere;
-			//Step 1: Connection Check
-			//Step 2: Main Table Check\Creation
-			//TODO: Make Error Messages a bit more helpful.. (Nobody wants to read a stack trace #justsaying)
-			boolean isGood = true;
-			//Lets Load up The Config File:
+			
 			getLogger().info("Starting Up BukkitBoard");
-			getConfig().options().copyDefaults(true);
+			//getConfig().options().copyDefaults(true);
 			saveConfig();
 			
 			getLogger().info("Connecting to MySQL Database");
 			SQLConnect();
 			TableCheck();
-			//FillMTArray();
-			
+						
 		}
 		
-		//Fill the Message Type Array. NOT WORKING
-		/*
-		public boolean FillMTArray()
-		{
-			int max = getConfig().getConfigurationSection("Type").getKeys(false).size();
-			mt = new MessageType[max];
-			for(int i=0; i < max; i++)
-			for(String mKey:getConfig().getConfigurationSection("Type").getKeys(false))
-			{
-				//DEBUG MODE
-				mt[i].Name = getConfig().getString("Types."+mKey+".name");
-				mt[i].SQLType = getConfig().getString("Types."+mKey+".sid").toCharArray()[0];
-				getLogger().info(mt[i].Name+mt[i].SQLType);
-			}
-			
-			return true;
-		}
-		*/
-		
-		//
 		public boolean SQLConnect()
 		{
 			//Set up the DB	
@@ -115,7 +85,7 @@ public final class main extends JavaPlugin
 		{
 				getLogger().info("Connected to MySQL Database");
 				//Now that it's set up Check to see if there is at least a bukkitboard table exists (bktbrd_main)
-				getLogger().info("Checking for BukkitBoard Main Table (bktbrd_main)");
+				getLogger().info("Checking for BukkitBoard Main Table (bktbrd_maisn)");
 				try
 				{
 					ps = db.prepareStatement("Select * from bktbrd_main;");
@@ -152,37 +122,12 @@ public final class main extends JavaPlugin
 				return true;
 		}
 		
-		//NOT WORKING : 
-	/*	public void join(PlayerJoinEvent event)
-		{
-			event.getPlayer().sendMessage(ChatColor.BLUE + "This server is running BukkitBoard!");
-			//TODO: Add an option to toggle messages on and off.
-			String player = event.getPlayer().getDisplayName();
-			if( player == "speewave")
-			{
-           	 for(Player allPlayers : getServer().getOnlinePlayers()) {
- 				allPlayers.sendMessage(ChatColor.RED + "A developer of BukkitBoard has joined!");
-           	 }
-
-			}
-			else if(player == "football70500")
-			{
-				for(Player allPlayers : getServer().getOnlinePlayers()) {
-	 				allPlayers.sendMessage(ChatColor.RED + "A developer of BukkitBoard has joined!");
-				}
-			}
-			// Shameless plug is ... rather interesting : Thanks @football70500
-		}
-		*/
-		
 		//Aliases for types
 		public char TypeAlias (String instring)
 
 		{
 			switch(instring.toLowerCase())
 			{
-				//TODO: add config customizable types
-			
 				//info (i)
 				case ("i"): return 'i'; 
 				case ("info"): return 'i'; 
@@ -228,14 +173,14 @@ public final class main extends JavaPlugin
 		
 		public boolean Help_Usage(Player player)
 		{
-			player.sendMessage(ChatColor.RED  + "===========================================================");
+			player.sendMessage(ChatColor.RED  + "=====================================================");
 			player.sendMessage(ChatColor.BLUE + "BukkitBoard Usage List");
-			player.sendMessage(ChatColor.BLUE + " Use /bb help <subcommand> to find more help on a topic");
-			player.sendMessage(ChatColor.RED  + "===========================================================");
+			player.sendMessage(ChatColor.BLUE + " Use /bb help <subcommand> For More Help");
+			player.sendMessage(ChatColor.RED  + "=====================================================");
 			player.sendMessage(ChatColor.BLUE + "/bb post <type> <msg>");
 			player.sendMessage(ChatColor.BLUE + "/bb list -t<type> -a<amount> -p<page>");
 			player.sendMessage(ChatColor.BLUE + "/bb remove <id>");
-			player.sendMessage(ChatColor.RED  + "===========================================================");
+			player.sendMessage(ChatColor.RED  + "=====================================================");
 			return true;
 		}
 		

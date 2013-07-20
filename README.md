@@ -1,14 +1,13 @@
-BukkitBoard [UNSTABLE]
+BukkitBoard
 ===========
 
 A console-based Bulletin Board Plugin for Bukkit Minecraft Servers
 
 
-##Letter From the Developer 
+##Letter From the Developer
 =======
-Currently this build is unstable and is nowhere near where we'd like it to be. Don't worry, once i get a stable version working(Shortly), i'll be making a more efficient unstable branch... (Still was getting used to Source Control and git at the start of the project)
-
--Speewave
+Seems Stable now, Please report issues, as it stands, this loads and runs good on my system (Aside for some quirks)
+this software is pre-alpha, so yeah, use at risk!
 
 ##Dependencies
 ===========
