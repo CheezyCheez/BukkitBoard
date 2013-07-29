@@ -162,28 +162,6 @@ public final class main extends JavaPlugin
 			return true;
 		}
 		
-		//Help Command
-		public boolean help(Player player, String [] args)
-		{
-			switch (args[1])
-			{
-			default: return Help_Usage(player);
-			}
-		}
-		
-		public boolean Help_Usage(Player player)
-		{
-			player.sendMessage(ChatColor.RED  + "=====================================================");
-			player.sendMessage(ChatColor.BLUE + "BukkitBoard Usage List");
-			player.sendMessage(ChatColor.BLUE + " Use /bb help <subcommand> For More Help");
-			player.sendMessage(ChatColor.RED  + "=====================================================");
-			player.sendMessage(ChatColor.BLUE + "/bb post <type> <msg>");
-			player.sendMessage(ChatColor.BLUE + "/bb list -t<type> -a<amount> -p<page>");
-			player.sendMessage(ChatColor.BLUE + "/bb remove <id>");
-			player.sendMessage(ChatColor.RED  + "=====================================================");
-			return true;
-		}
-		
 		//Listing Types command
 		public boolean ShowTypes(Player player)
 		{
