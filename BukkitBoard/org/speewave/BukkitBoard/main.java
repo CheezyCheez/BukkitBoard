@@ -192,18 +192,19 @@ public final class main extends JavaPlugin
 		}
 		
 		//Posting command /bb post
-		public boolean Post (Player player, String inType, String[] Message)
+		public boolean Post (Player player, String[] args)
 		{
 			boolean success= true;
 			
-			int startindex = Message[0].length() + Message [1].length() + 1;
-			String msg = Joiner.on(" ").join(Message).substring(startindex).trim();//TODO: Add this to fix apostrophes causing errors...replaceAll("'", "")
+			int startindex = args[0].length() + 1;
+			String msg = Joiner.on(" ").join(args).substring(startindex).trim();
+			
+			String inType = args[0];
 			
 			char t = TypeAlias(inType);
 			if (t=='0')
 			{
-				player.sendMessage("You didn't use a recognized type, use /bb types for a listing of them");
-				player.sendMessage("Except not now because that feature isn't implemented yet");
+				player.sendMessage("You didn't use a recognized type, use /bb for a listing of them");
 				return false;
 			}
 			
@@ -219,7 +220,7 @@ public final class main extends JavaPlugin
 			}
 			if (success = true)
 			{
-				Bukkit.broadcastMessage("Someone has made another post! Type /bb list to view it!");
+				Bukkit.broadcastMessage("Someone has made another post! Type /b to view it!");
 				//TODO: Charge the player money (for Vault Support)
 			}
 			return success;
@@ -231,17 +232,9 @@ public final class main extends JavaPlugin
 	            Player send = (Player) sender;
 	            Player target = null;
 	            
-	            if (command.getName().equalsIgnoreCase("bb"))
-	            {
-	            	switch (args[0])
-	            	{
-	            		case "post": return Post(send,args[1],args);
-	            		case "help" : return help(send,args);
-	            		default: Help_Usage(send);	  
-	        	   }
-	           }
+	            if (command.getName().equalsIgnoreCase("bbp")) return Post(send,args);
+	            else return false;
 	            
-	            return false;
 		 }
 
 		public void onDisable()
