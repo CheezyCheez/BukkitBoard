@@ -196,6 +196,11 @@ public final class main extends JavaPlugin
 		{
 			boolean success= true;
 			
+			if(args.length < 2)
+			{
+				return false;
+			}
+			
 			int startindex = args[0].length() + 1;
 			String msg = Joiner.on(" ").join(args).substring(startindex).trim();
 			
