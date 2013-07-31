@@ -13,7 +13,4 @@ As of the latest Commit... you'll need:
 * Latest CraftBukkit Development API
 
 ##Commands
-Added commands
-- /bb help
-- /bb post
-
+- /bbp [board] [message] - Post message to a board!
