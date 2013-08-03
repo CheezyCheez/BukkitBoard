@@ -4,11 +4,8 @@ A console-based Bulletin Board Plugin for Bukkit Minecraft Servers
 
 
 ##Letter From the Developer
-
-Spiro (Speewave) here - I moved this out from my own user to an organization
-
-so instead of Speewave/Bukkitboard it's /BukkitBoard/Bukkitboard (A tad redundant, but whatever) Feel free to contribute!
-[Speewave/bukkitboard is just my development work, a fork of this repo]
+Seems Stable now, Please report issues, as it stands, this loads and runs good on my system (Aside for some quirks)
+this software is pre-alpha, so yeah, use at risk!
 
 ##Dependencies
 As of the latest Commit... you'll need:
