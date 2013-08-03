@@ -197,13 +197,13 @@ public final class main extends JavaPlugin
 			}
 			catch (SQLException e)
 			{
-				player.sendMessage("Something Went Wrong... Have an admin look it to it.. your error will be on the console");
+				player.sendMessage("Something Went Wrong... Have an admin look into it.. your error will be on the console");
 				getLogger().severe(e.getMessage());
 				success=false;
 			}
 			if (success = true)
 			{
-				Bukkit.broadcastMessage("Someone has made another post! Type /b to view it!");
+				Bukkit.broadcastMessage("Someone has made another post! Type /bbv to view it!");
 				//TODO: Charge the player money (for Vault Support)
 			}
 			return success;
