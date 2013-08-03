@@ -140,7 +140,11 @@ public final class main extends JavaPlugin
 				case ("work"):return 'w';
 				//Clans (c)
 				case ("c"):return 'c'; 
-				case ("clan"):return 'c'; 
+				case ("clan"):return 'c';
+				//Factions(f)
+				case ("f"): return 'f';
+				case ("fac"): return 'f';
+				case ("factions"): return 'f';
 				//Matches (m)
 				case ("m"):return 'm'; 
 				case ("matches"):return 'm';
