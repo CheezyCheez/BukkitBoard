@@ -2,7 +2,7 @@ BukkitBoard
 ===========
 A console-based Bulletin Board Plugin for Bukkit Minecraft Servers
 
-	This is the Development Branch for the Custom Category feature of BukkitBoard! A lot of Heavy development will appear here, i didn't really have to branch it off, but i felt the need to learn how branches work incase i need to make some huge change and i'm at the point where bukkitboard is utilized by many!
+This is the Development Branch for the Custom Category feature of BukkitBoard! A lot of Heavy development will appear here, i didn't really have to branch it off, but i felt the need to learn how branches work incase i need to make some huge change and i'm at the point where bukkitboard is utilized by many!
 
 
 RoadMap to Merging with master
