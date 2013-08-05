@@ -14,3 +14,14 @@ boards:
     aliases: - c
              - clan
              - clans
+  - name: team
+    tablename: teams
+    aliases: - t
+             - team
+             - teams
+  - name: faction
+    tablename: factions
+    aliases: - f
+             - faction
+             - fac
+             - factions
