@@ -31,6 +31,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
 //Please Note this is not a final product just yet.. (i'll probably always be doing something to it) anyway... if you have a Feature request or Bug:
 //Please go to : https://github.com/speewave/BukkitBoard/issues... someone on the dev team will do something about it...
@@ -45,10 +46,11 @@ public final class main extends JavaPlugin
 		
 		public void onEnable()
 		{	
-			
 			getLogger().info("Starting Up BukkitBoard");
 			//getConfig().options().copyDefaults(true);
 			saveConfig();
+			
+			LoadBoards();
 			
 			getLogger().info("Connecting to MySQL Database");
 			SQLConnect();
@@ -56,6 +58,10 @@ public final class main extends JavaPlugin
 						
 		}
 		
+		public int LoadBoards()
+		{
+			return 0;
+		}
 		public boolean SQLConnect()
 		{
 			//Set up the DB	
@@ -85,7 +91,7 @@ public final class main extends JavaPlugin
 		{
 				getLogger().info("Connected to MySQL Database");
 				//Now that it's set up Check to see if there is at least a bukkitboard table exists (bktbrd_main)
-				getLogger().info("Checking for BukkitBoard Main Table (bktbrd_maisn)");
+				getLogger().info("Checking for BukkitBoard Main Table (bktbrd_main)");
 				try
 				{
 					ps = db.prepareStatement("Select * from bktbrd_main;");

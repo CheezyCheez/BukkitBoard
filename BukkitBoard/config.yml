@@ -4,3 +4,13 @@ hostname: localhost
 database: bb
 user: bbtest
 password: 12345
+boards:
+  - name: store
+    tablename: stores
+    aliases: - s
+             - shops
+  - name: clan
+    tablename: clans
+    aliases: - c
+             - clan
+             - clans
